@@ -1,18 +1,60 @@
 //google fonts
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap");
+@mixin resMobile {
+  @media (max-width: 1250px) {
+    @content;
+  }
+}
+@mixin resMob {
+  @media (max-width: 690px) {
+    @content;
+  }
+}
+@mixin pixel {
+  @media (max-width: 500px) {
+    @content;
+  }
+}
+@mixin maxfive {
+  @media (max-width: 583px) {
+    @content;
+  }
+}
 .container {
   height: 100vh;
   background-color: #0a192f;
   display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
+  @include resMobile {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    height: 107vh;
+    width: 100%;
+  }
+  @include pixel {
+    height: 100vh;
+    // padding: 20px;
+    padding: 10px 0;
+  }
 }
 .name_box {
   height: 80vh;
   width: 65%;
   background-color: #0a192f;
   border: 1px solid white;
-  padding: 50px;
+  padding: 20px;
+  // padding-bottom: 60px;
+  @include resMobile {
+    height: 100vh;
+    width: 75%;
+    padding: 30px;
+  }
+  @include pixel {
+    width: 90%;
+    margin: 10px;
+  }
   .greet {
     font-size: 16px;
     color: #64ffda;
@@ -24,6 +66,16 @@
     font-size: 66px;
     font-family: "Open Sans", sans-serif;
     color: #ccd6f6;
+    @include resMob {
+      font-size: 55px;
+    }
+    @include pixel {
+      font-size: 45px;
+    }
+  }
+  span {
+    padding-top: 10px;
+    display: block;
   }
   h2 {
     font-size: 65px;
@@ -31,17 +83,38 @@
     color: #8892b0;
     padding: 10px 0;
     font-family: "Open Sans", sans-serif;
+    @include resMob {
+      font-size: 50px;
+    }
+    @include pixel {
+      font-size: 45px;
+    }
   }
 }
 .para {
   height: 150px;
   width: 500px;
   padding: 20px 0 5.5px 0;
+  @include resMob {
+    width: 400px;
+  }
+  @include pixel {
+    width: 300px;
+  }
+  @include maxfive {
+    width: 350px;
+  }
   //   background-color: rosybrown;
   p {
     font-size: 20px;
     color: #8892b0;
     font-family: "Open Sans", sans-serif;
+    @include resMob {
+      font-size: 16.5px;
+    }
+    @include pixel {
+      // font-size: ;
+    }
   }
 }
 button {
@@ -55,6 +128,9 @@ button {
   font-size: 14px;
   color: #64ffda;
   transform: all 0.2s;
+  @include pixel {
+    margin-top: 5px;
+  }
 }
 button:hover {
   transform: translateY(-2px);
