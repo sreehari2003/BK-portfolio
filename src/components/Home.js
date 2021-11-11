@@ -1,8 +1,8 @@
 import React from "react";
 import "./home.scss";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
-export const Home = ({ showPage }) => {
+export const Home = () => {
   return (
     <>
       <div className="container">
@@ -19,7 +19,9 @@ export const Home = ({ showPage }) => {
               developmet.
             </p>
           </div>
-          <button onClick={showPage}>Check out my projects</button>
+          <a href="https://basheerbk.github.io/Kerala-IoT-Challenge/">
+            <button>Check out my projects</button>
+          </a>
         </div>
       </div>
     </>
